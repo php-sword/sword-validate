@@ -1,0 +1,23 @@
+{
+    "name": "php-sword/sword-validate",
+    "description": "Form validator for PHP",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Kyour",
+            "email": "kyour@vip.qq.com"
+        },
+        {
+            "name": "liu21st",
+            "email": "liu21st@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "sword\\validate\\": "src"
+        }
+    }
+}
