@@ -1,6 +1,6 @@
 # sword-validate
 
-PHP的表达验证库
+PHP的表单验证库
 
 > 该插件基于`topthink/think-validate`库修改而来，感谢原作者的付出。
 
