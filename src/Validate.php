@@ -695,9 +695,6 @@ class Validate
                 // 验证失败 返回错误信息
                 if (!empty($msg[$i])) {
                     $message = $msg[$i];
-                    if (is_string($message) && str_starts_with($message, '{%')) {
-                        $message = $this->lang->get(substr($message, 2, -1));
-                    }
                 } else {
                     $message = $this->getRuleMsg($field, $title, $info, $rule);
                 }
@@ -1601,7 +1598,7 @@ class Validate
         } elseif (str_starts_with($type, 'require')) {
             $msg = $this->typeMsg['require'];
         } else {
-            $msg = $title . $this->lang->get('not conform to the rules');
+            $msg = $title . 'not conform to the rules';
         }
 
         if (is_array($msg)) {
@@ -1621,12 +1618,6 @@ class Validate
      */
     protected function parseErrorMsg(string $msg, $rule, string $title)
     {
-        if (str_starts_with($msg, '{%')) {
-            $msg = $this->lang->get(substr($msg, 2, -1));
-        } elseif ($this->lang->has($msg)) {
-            $msg = $this->lang->get($msg);
-        }
-
         if (is_array($msg)) {
             return $this->errorMsgIsArray($msg, $rule, $title);
         }
